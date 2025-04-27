@@ -6,11 +6,10 @@ class ObjectChangeDetector:
     def __init__(self):
         self.model = YOLO("yolov8n.pt")     # Load YOLOv8 model (nano version for speed)
         
-        self.prev_objects = {}      # Store previously seen objects (just using bounding boxes, not proper tracking)
+        self.prev_objects = {}    
         self.current_objects = {}
         
-        self.frame_count = 0        # FPS calculation
-        self.fps = 0
+        self.frame_count = 0   
         self.prev_time = 0
         
     def detect_changes(self, frame):
